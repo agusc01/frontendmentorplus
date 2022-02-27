@@ -1,0 +1,85 @@
+// # Front-end Style Guide
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// - White: hsl(0, 0%, 100%)
+// - Light gray: hsl(212, 45%, 89%)
+// - Grayish blue: hsl(220, 15%, 55%)
+// - Dark blue: hsl(218, 44%, 22%)
+
+// ## Typography
+// ### Body Copy
+// - Font size (paragraph): 15px
+
+// ### Font
+// - Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+// - Weights: 400, 700
+
+$width-body-footer-card: 305px;
+%body-footer-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: $width-body-footer-card;
+}
+
+* {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+}
+
+.body {
+  background-color: hsl(212, 45%, 89%);
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  height: 100vh;
+  width: 100wh;
+}
+
+.card {
+  width: 350px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+
+  &__figure {
+    margin: 0 auto;
+    width: 90%;
+  }
+  &__image {
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  &__title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: hsl(218, 44%, 22%);
+  }
+  &__text {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
+  }
+  &__body {
+    @extend %body-footer-card;
+  }
+  &__footer {
+    @extend %body-footer-card;
+    width: $width-body-footer-card - 15px;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 3rem;
+  text-align: center;
+}

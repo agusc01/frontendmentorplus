@@ -1,3 +1,4 @@
-projects/**/.gitignore
+projects/**/*.md
+# projects/**/.gitignore
 projects/**/design/
 projects/**/favicon*.*
