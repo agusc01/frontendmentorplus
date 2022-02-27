@@ -1,0 +1,3 @@
+projects/**/.gitignore
+projects/**/design/
+projects/**/favicon*.*
