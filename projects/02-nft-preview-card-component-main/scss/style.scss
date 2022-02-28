@@ -27,9 +27,6 @@
   font-size: 18px;
 }
 
-.body {
-}
-
 .main {
   position: relative;
   height: 100vh;
@@ -38,6 +35,11 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(217, 54%, 11%);
+}
+
+%hover-text {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
 
 .card {
@@ -50,15 +52,31 @@
     margin-right: auto;
   }
   &__header {
+    position: relative;
     height: 325px;
     margin-top: 25px;
     background-color: yellow;
+    &:hover .card__wrapper-image {
+      display: block;
+      cursor: pointer;
+    }
   }
   &__figure {
     margin: 0;
     &--icon {
       position: relative;
     }
+  }
+  &__wrapper-image {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    height: 325px;
+    width: 325px;
+    display: none;
+    border-radius: 0.5rem;
+    background-color: hsla(178, 100%, 50%, 0.6);
+    background-image: url('../images/icon-view.svg');
   }
   &__image {
     width: 100%;
@@ -67,6 +85,10 @@
   &__title {
     color: hsl(0, 0%, 100%);
     font-size: 1.5rem;
+    font-weight: 700;
+    &:hover {
+      @extend %hover-text;
+    }
   }
   &__text {
     font-weight: 300;
@@ -90,8 +112,13 @@
     }
     &--author {
       color: hsl(0, 0%, 100%);
+
+      &:hover {
+        @extend %hover-text;
+      }
     }
     &--footer {
+      margin-top: 0;
       margin-left: 1rem;
     }
   }
@@ -106,12 +133,17 @@
       left: 12.8rem;
       top: 1.2rem;
     }
+    &--view {
+      top: 43%;
+      left: 43%;
+    }
   }
   &__footer {
     display: flex;
     align-items: center;
     padding: 0.65rem 0;
     border-top: 1px solid hsl(215, 32%, 27%);
+    padding: 1rem 0 1.5rem 0;
   }
 
   &__avatar {
@@ -123,6 +155,18 @@
 
 .attribution {
   position: absolute;
-  bottom: 0.25rem;
+  bottom: -1rem;
+  width: 100%;
   text-align: center;
+}
+
+// change 375px to 415px (375px it's to small)
+@media (min-width: 415px) {
+  .card {
+    box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5),
+      -1rem -1rem 5rem rgba(0, 0, 0, 0.5);
+  }
+  .attribution {
+    bottom: 3rem;
+  }
 }
