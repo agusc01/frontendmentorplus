@@ -1,0 +1,128 @@
+// # Front-end Style Guide
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+// - Soft blue: hsl(215, 51%, 70%)
+// - Cyan: hsl(178, 100%, 50%)
+
+// ### Neutral
+// - Very dark blue (main BG): hsl(217, 54%, 11%)
+// - Very dark blue (card BG): hsl(216, 50%, 16%)
+// - Very dark blue (line): hsl(215, 32%, 27%)
+// - White: hsl(0, 0%, 100%)
+
+// ## Typography
+// ### Body Copy
+// - Font size (paragraph): 18px
+// ### Font
+// - Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+// - Weights: 300, 400, 600
+
+* {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+}
+
+.body {
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(217, 54%, 11%);
+}
+
+.card {
+  width: 375px;
+  border-radius: 1rem;
+  background-color: hsl(216, 50%, 16%);
+  &__container {
+    width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__header {
+    height: 325px;
+    margin-top: 25px;
+    background-color: yellow;
+  }
+  &__figure {
+    margin: 0;
+    &--icon {
+      position: relative;
+    }
+  }
+  &__image {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  &__title {
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+  }
+  &__text {
+    font-weight: 300;
+    line-height: 1.6rem;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: hsl(215, 51%, 70%);
+    &--price {
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: hsl(178, 100%, 50%);
+    }
+    &--days {
+      position: absolute;
+      font-size: 0.9rem;
+      top: 0;
+      right: 0;
+    }
+    &--author {
+      color: hsl(0, 0%, 100%);
+    }
+    &--footer {
+      margin-left: 1rem;
+    }
+  }
+  &__stats {
+    position: relative;
+    height: 3rem;
+  }
+  &__icon {
+    position: absolute;
+    top: 1.2rem;
+    &--clock {
+      left: 12.8rem;
+      top: 1.2rem;
+    }
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 0;
+    border-top: 1px solid hsl(215, 32%, 27%);
+  }
+
+  &__avatar {
+    width: 2rem;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0.25rem;
+  text-align: center;
+}
