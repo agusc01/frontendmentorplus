@@ -1,0 +1,88 @@
+* {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e0e8ff;
+}
+
+.card__body, .card__footer, .card__wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.card {
+  width: 23.4375rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__figure {
+  margin: 0;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__wrapper {
+  width: 80%;
+}
+
+.card__title {
+  color: #1f2f56;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.card__text {
+  font-weight: 500;
+  color: #7280a7;
+  line-height: 1.6rem;
+}
+
+.card__button {
+  display: block;
+  border: none;
+  padding: 1rem;
+  width: 90%;
+  margin: 1rem auto 1.5rem;
+  border-radius: 0.75rem;
+  -webkit-box-shadow: 0.0625rem 1.25rem 0.625rem #e0e8ff;
+          box-shadow: 0.0625rem 1.25rem 0.625rem #e0e8ff;
+  font-weight: 700;
+  color: #fff;
+  background-color: #3829e0;
+  cursor: pointer;
+}
+
+.card__button--cancel {
+  padding-top: 0.5rem;
+  background-color: #fff;
+  color: #7280a7;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.attribution {
+  position: absolute;
+  bottom: -3rem;
+  width: 100%;
+  text-align: center;
+}
