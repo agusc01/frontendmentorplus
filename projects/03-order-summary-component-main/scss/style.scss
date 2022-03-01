@@ -23,13 +23,8 @@
 // - Family: [Red Hat Display](https://fonts.google.com/specimen/Red+Hat+Display)
 // - Weights: 500, 700, 900
 
-@function pxToRem($number) {
-  @return concat($number / $font-size, 'rem');
-}
-
-@function concat($str1, $str2) {
-  @return unquote($string: $str1 + $str2);
-}
+@import 'functions';
+@import 'mixins';
 
 $font-size: 16;
 
@@ -45,58 +40,92 @@ $font-size: 16;
   justify-content: center;
   align-items: center;
   background-color: hsl(225, 100%, 94%);
-}
-
-%body-footer {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  background-image: url('./../../images/pattern-background-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .card {
-  width: pxToRem(375);
+  min-width: pxToRem(375);
+  max-width: pxToRem(375);
   border-radius: 1rem;
   background-color: #fff;
   border-radius: 1rem;
   overflow: hidden;
   &__figure {
     margin: 0;
+    &--icon {
+      grid-row: 2/4;
+      grid-column: 1/4;
+    }
   }
   &__image {
     width: 100%;
   }
   &__body {
-    @extend %body-footer;
+    @include body-footer(80%);
   }
   &__footer {
-    @extend %body-footer;
+    @include body-footer(90%);
   }
   &__wrapper {
-    @extend %body-footer;
-    width: 80%;
+    @include body-footer(90%);
   }
   &__title {
     color: hsl(223, 47%, 23%);
     font-size: 1.5rem;
     font-weight: 900;
+    &--plan {
+      font-size: 1rem;
+      grid-row: 2/3;
+      grid-column: 4/9;
+      align-self: center;
+      justify-self: start;
+    }
   }
   &__text {
     font-weight: 500;
     color: hsl(224, 23%, 55%);
     line-height: 1.6rem;
+    font-size: 0.9rem;
+    &--price {
+      grid-row: 3/4;
+      grid-column: 4/9;
+      align-self: center;
+      justify-self: start;
+    }
   }
+  &__stats {
+    @include body-footer(90%);
+    display: grid;
+    grid-template-columns: repeat(12, 8.33333%);
+    grid-template-rows: 1.2rem 1.5rem 1.5rem 1.2rem;
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 0.75rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1.7rem;
+  }
+  &__link {
+    color: hsl(245, 75%, 52%);
+    font-weight: 900;
+    font-size: 0.9rem;
+    grid-row: 2/4;
+    grid-column: 10/13;
+    align-self: center;
+    justify-self: start;
+    font-size: 0.8rem;
+  }
+
   &__button {
     display: block;
     border: none;
     padding: 1rem;
     width: 90%;
-    margin: 1rem auto 1.5rem;
+    margin: 0 auto 1.5rem;
     border-radius: 0.75rem;
-    box-shadow: pxToRem(1) pxToRem(20) pxToRem(10) hsl(225, 100%, 94%);
+    box-shadow: pxToRem(3) pxToRem(15) pxToRem(15) hsl(225, 100%, 94%);
     font-weight: 700;
     color: #fff;
-    // background-color: hsl(225, 100%, 94%);//stats
     background-color: hsl(245, 75%, 52%);
     cursor: pointer;
     &--cancel {
