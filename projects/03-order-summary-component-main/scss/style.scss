@@ -27,6 +27,7 @@
 @import 'mixins';
 
 $font-size: 16;
+$timeTransition: 1s;
 
 * {
   font-family: 'Red Hat Display', sans-serif;
@@ -55,22 +56,15 @@ $font-size: 16;
   overflow: hidden;
   &__figure {
     margin: 0;
-    &--icon {
-      grid-row: 2/4;
-      grid-column: 1/4;
-    }
   }
   &__image {
     width: 100%;
   }
-  &__body {
-    @include body-footer(80%);
-  }
-  &__footer {
-    @include body-footer(90%);
-  }
   &__wrapper {
     @include body-footer(90%);
+    &--header {
+      @include body-footer(90%);
+    }
   }
   &__title {
     color: hsl(223, 47%, 23%);
@@ -106,6 +100,11 @@ $font-size: 16;
     margin-top: 1.3rem;
     margin-bottom: 1.7rem;
   }
+  &__icon {
+    grid-row: 2/4;
+    grid-column: 1/4;
+    justify-self: center;
+  }
   &__link {
     color: hsl(245, 75%, 52%);
     font-weight: 900;
@@ -115,6 +114,7 @@ $font-size: 16;
     align-self: center;
     justify-self: start;
     font-size: 0.8rem;
+    transition: opacity $timeTransition;
     &:hover {
       text-decoration: none;
       opacity: 0.65;
@@ -133,6 +133,7 @@ $font-size: 16;
     color: #fff;
     background-color: hsl(245, 75%, 52%);
     cursor: pointer;
+    transition: opacity $timeTransition, color $timeTransition;
     &:hover {
       opacity: 0.65;
     }
