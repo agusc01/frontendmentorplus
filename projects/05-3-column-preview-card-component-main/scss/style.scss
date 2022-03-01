@@ -45,7 +45,7 @@ $font-size: 15;
   justify-content: center;
   align-items: center;
   height: 160vh;
-  width: 100vw;
+  width: 100%;
   background-color: hsl(0, 0%, 95%);
 }
 
@@ -113,7 +113,7 @@ $font-size: 15;
   }
 }
 
-@media (min-width: pxToRem(1200)) {
+@media (min-width: pxToRem(850)) {
   .main {
     height: 100vh;
   }
