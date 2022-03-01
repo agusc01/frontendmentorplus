@@ -4,8 +4,7 @@
 }
 
 .main {
-  height: 100vh;
-  width: 100vw;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,6 +14,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100vh;
+  width: 100vw;
   background-color: #e0e8ff;
   background-image: url("./../../images/pattern-background-mobile.svg");
   background-repeat: no-repeat;
@@ -145,6 +146,11 @@
   font-size: 0.8rem;
 }
 
+.card__link:hover {
+  text-decoration: none;
+  opacity: 0.65;
+}
+
 .card__button {
   display: block;
   border: none;
@@ -160,6 +166,10 @@
   cursor: pointer;
 }
 
+.card__button:hover {
+  opacity: 0.65;
+}
+
 .card__button--cancel {
   padding-top: 0.5rem;
   background-color: #fff;
@@ -168,9 +178,20 @@
           box-shadow: none;
 }
 
+.card__button--cancel:hover {
+  opacity: 1;
+  color: #1f2f56;
+}
+
 .attribution {
   position: absolute;
-  bottom: -3rem;
+  bottom: 3rem;
   width: 100%;
   text-align: center;
+}
+
+@media (min-width: 25.9375rem) {
+  .main {
+    background-image: url("./../../images/pattern-background-desktop.svg");
+  }
 }
