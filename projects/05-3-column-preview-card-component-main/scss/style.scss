@@ -1,0 +1,129 @@
+// # Front-end Style Guide
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+// Bright orange: hsl(31, 77%, 52%)
+// Dark cyan: hsl(184, 100%, 22%)
+// Very dark cyan: hsl(179, 100%, 13%)
+
+// ### Neutral
+// Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+// Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
+
+// ## Typography
+// ### Body Copy
+// - Font size: 15px
+// ### Font
+// - Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+// - Weights: 400
+
+// - Family: [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders+Display)
+// - Weights: 700
+
+@import 'functions';
+@import 'mixins';
+
+%font-deca {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+}
+$font-size: 15;
+
+* {
+  font-family: 'Big Shoulders Display', cursive;
+  font-weight: 700;
+  font-size: concat($font-size, 'px');
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160vh;
+  width: 100vw;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.cards {
+  width: pxToRem(300);
+
+  background-color: hsl(244, 38%, 16%);
+  color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card {
+  padding: 3rem 3rem;
+  &--sedans {
+    background-color: hsl(31, 77%, 52%);
+    //for current color in button
+    color: hsl(31, 77%, 52%);
+  }
+  &--suvs {
+    background-color: hsl(184, 100%, 22%);
+    //for current color in button
+    color: hsl(184, 100%, 22%);
+  }
+  &--luxury {
+    background-color: hsl(179, 100%, 13%);
+    //for current color in button
+    color: hsl(179, 100%, 13%);
+  }
+  &__title {
+    color: hsl(0, 0%, 95%);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+  &__text {
+    @extend %font-deca;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-bottom: pxToRem(20);
+  }
+  &__button {
+    @extend %font-deca;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: 0.25rem solid transparent;
+    border-radius: 2rem;
+    color: currentColor;
+    transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+    &:hover {
+      color: hsla(0, 0%, 100%, 0.75);
+      background-color: transparent;
+      border-color: currentColor;
+      cursor: pointer;
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  text-align: center;
+  &__text {
+    margin: 0;
+  }
+}
+
+@media (min-width: pxToRem(1200)) {
+  .main {
+    height: 100vh;
+  }
+  .cards {
+    display: flex;
+    width: pxToRem(850);
+  }
+  .card {
+    &__text {
+      margin-bottom: 5rem;
+    }
+  }
+}
