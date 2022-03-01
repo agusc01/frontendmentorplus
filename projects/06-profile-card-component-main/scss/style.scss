@@ -1,0 +1,115 @@
+// # Front-end Style Guide
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+// Dark cyan: hsl(185, 75%, 39%)
+// Very dark desaturated blue: hsl(229, 23%, 23%) #
+// Dark grayish blue: hsl(227, 10%, 46%)
+
+// ### Neutral
+// Dark gray: hsl(0, 0%, 59%)
+
+// ## Typography
+// ### Body Copy
+// - Font size (name and stats): 18px
+// ### Font
+// - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+// - Weights: 400, 700
+
+@import 'functions';
+@import 'mixins';
+
+$font-size: 18;
+
+* {
+  font-size: concat($font-size, 'px');
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: hsl(185, 75%, 39%);
+  &__background {
+    &--top {
+    }
+    &--bottom {
+    }
+  }
+}
+
+$widthCard: 350;
+$widthAvatar: 96;
+$backcolorCard: #fff;
+
+.card {
+  width: pxToRem($widthCard);
+  background-color: $backcolorCard;
+  color: hsl(229, 23%, 23%);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  text-align: center;
+  &__background {
+    position: relative;
+    background-image: url('../../images/bg-pattern-card.svg');
+    height: pxToRem(130);
+    margin-bottom: pxToRem($widthAvatar/2 + 20);
+  }
+  &__avatar {
+    position: absolute;
+    width: pxToRem($widthAvatar);
+    left: pxToRem($widthCard/2-$widthAvatar/2);
+    bottom: pxToRem(-$widthAvatar/2);
+    border-radius: 50%;
+    border: 0.3rem solid $backcolorCard;
+  }
+  &__title {
+    margin-bottom: 0.7rem;
+  }
+  &__age {
+    color: hsl(227, 10%, 46%);
+    font-weight: 400;
+    white-space: pre-wrap;
+  }
+  &__text {
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 59%);
+    &--info {
+      font-size: 1rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__stats {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 0.05rem solid hsl(0, 0%, 59%);
+  }
+  &__stat {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  text-align: center;
+  &__text {
+    margin: 0;
+  }
+}
+
+@media (min-width: pxToRem(850)) {
+}
