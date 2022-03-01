@@ -37,30 +37,45 @@ $font-size: 18;
   align-items: center;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   background-color: hsl(185, 75%, 39%);
   &__background {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
     &--top {
+      background-image: url('../../images/bg-pattern-top.svg');
+      top: -15%;
+      left: -50%;
     }
     &--bottom {
+      background-image: url('../../images/bg-pattern-bottom.svg');
+      bottom: -60%;
+      right: -50%;
     }
   }
 }
 
 $widthCard: 350;
-$widthAvatar: 96;
+$widthAvatar: 120;
 $backcolorCard: #fff;
 
 .card {
+  position: relative;
   width: pxToRem($widthCard);
   background-color: $backcolorCard;
   color: hsl(229, 23%, 23%);
   border-radius: 0.75rem;
   overflow: hidden;
   text-align: center;
+  z-index: 10;
   &__background {
     position: relative;
     background-image: url('../../images/bg-pattern-card.svg');
-    height: pxToRem(130);
+    height: pxToRem(150);
     margin-bottom: pxToRem($widthAvatar/2 + 20);
   }
   &__avatar {
@@ -72,6 +87,7 @@ $backcolorCard: #fff;
     border: 0.3rem solid $backcolorCard;
   }
   &__title {
+    font-size: 1.2rem;
     margin-bottom: 0.7rem;
   }
   &__age {
@@ -95,6 +111,7 @@ $backcolorCard: #fff;
     display: flex;
     justify-content: space-evenly;
     border-top: 0.05rem solid hsl(0, 0%, 59%);
+    padding: 0.5rem 0;
   }
   &__stat {
     margin-bottom: 0.25rem;
@@ -106,10 +123,85 @@ $backcolorCard: #fff;
   position: absolute;
   bottom: 1.5rem;
   text-align: center;
+  z-index: 20;
   &__text {
     margin: 0;
   }
 }
 
-@media (min-width: pxToRem(850)) {
+// @media screen and (min-width: 460px) {
+//   .main {
+//     // background-color: red;
+//   }
+// }
+
+@media screen and (min-width: 600px) {
+  .main {
+    // background-color: blue;
+    &__background {
+      &--top {
+        top: -35%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .main {
+    // background-color: yellow;
+    &__background {
+      &--top {
+        top: -40%;
+        left: -40%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .main {
+    // background-color: green;
+    &__background {
+      &--top {
+        top: -45%;
+        left: -30%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .main {
+    // background-color: pink;
+    &__background {
+      &--top {
+        top: -50%;
+        left: -15%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .main {
+    // background-color: purple;
+    &__background {
+      &--top {
+        top: -50%;
+        left: -10%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .main {
+    // background-color: orange;
+    &__background {
+      &--top {
+        top: -55%;
+        left: -5%;
+      }
+    }
+  }
 }
