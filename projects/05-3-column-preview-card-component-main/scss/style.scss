@@ -44,7 +44,7 @@ $font-size: 15;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 160vh;
+  height: 180vh;
   width: 100%;
   background-color: hsl(0, 0%, 95%);
 }
@@ -87,7 +87,7 @@ $font-size: 15;
     color: hsla(0, 0%, 100%, 0.75);
     margin-bottom: pxToRem(20);
   }
-  &__button {
+  &__link {
     @extend %font-deca;
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
