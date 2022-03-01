@@ -50,7 +50,6 @@ $font-size: 15;
 .card {
   min-width: pxToRem(375);
   max-width: pxToRem(375);
-  border-radius: 1rem;
   background-color: hsl(244, 38%, 16%);
   color: hsl(0, 0%, 100%);
   border-radius: 1rem;
@@ -58,7 +57,7 @@ $font-size: 15;
 
   &__wrapper-image {
     height: pxToRem(275);
-
+    width: 100%;
     background-color: red;
     background: linear-gradient(hsla(277, 100%, 25%, 0.514)),
       url('../../images/image-header-mobile.jpg');
@@ -118,9 +117,51 @@ $font-size: 15;
   text-align: center;
 }
 
-// change 375px to 415px (375px it's to small)
-@media (min-width: pxToRem(415)) {
+@media (min-width: pxToRem(799)) {
   .main {
     height: 100vh;
+  }
+  .card {
+    display: flex;
+    max-width: pxToRem(800);
+    min-width: pxToRem(800);
+    border-radius: 0.5rem;
+    &__wrapper-image {
+      background-image: linear-gradient(hsla(277, 100%, 25%, 0.514)),
+        url('../../images/image-header-desktop.jpg');
+      width: 50%;
+      order: 2;
+    }
+    &__container {
+      width: 50%;
+      padding: 0 5rem 0 3rem;
+      text-align: left;
+      &--text {
+        padding: 0;
+        width: 95%;
+        margin: 0;
+      }
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__text {
+      font-size: 0.73rem;
+      line-height: 1.3rem;
+      &--info {
+        font-size: 0.5rem;
+      }
+    }
+    //
+    //375 - 275
+    &__stats {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 2rem;
+      padding-bottom: 0;
+    }
+    &__stat {
+      font-size: 1.2rem;
+    }
   }
 }
