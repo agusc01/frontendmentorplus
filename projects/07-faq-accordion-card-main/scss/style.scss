@@ -45,22 +45,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 135vh;
+  height: 115vh;
   width: 100%;
   background-image: linear-gradient(
     hsl(273, 75%, 66%),
     hsl(240, 73%, 65%)
   );
+  overflow: hidden;
 }
 
 .card {
   position: relative;
-  background-color: #fff;
-  width: 90%;
-  max-width: pxToRem(375);
-  border-radius: 1.5rem;
-  padding: 10rem 0 2rem;
-  margin: $cardMarginTop auto $cardMarginBotton;
+  &__container {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    max-width: pxToRem(375);
+    border-radius: 1.5rem;
+    padding: 10rem 0 2rem;
+    margin: $cardMarginTop auto $cardMarginBotton;
+  }
 
   &__background-container {
     top: pxToRem(-137);
@@ -171,16 +175,18 @@
     height: 100vh;
   }
   .card {
-    max-width: pxToRem(1000);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 5rem 0;
-    overflow: hidden;
+    &__container {
+      max-width: pxToRem(1000);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 5rem 0;
+      overflow: hidden;
+    }
 
     &__background-container {
       $sizeBackgroundContainer: pxToRem(450);
-      top: pxToRem(100);
-      left: pxToRem(-70);
+      top: pxToRem(70);
+      left: pxToRem(-80);
       position: absolute;
       height: $sizeBackgroundContainer;
       width: $sizeBackgroundContainer;
@@ -194,21 +200,21 @@
         $sizeBackgroundContainer: pxToRem(1000);
         height: $sizeBackgroundContainer;
         width: $sizeBackgroundContainer;
-        left: pxToRem(-620);
-        top: pxToRem(-280);
+        left: pxToRem(-630);
+        top: pxToRem(-305);
         z-index: 10;
       }
     }
 
     &__background-box {
-      height: pxToRem(180);
-      width: pxToRem(180);
+      height: pxToRem(160);
+      width: pxToRem(160);
       background-image: url('../../images/illustration-box-desktop.svg');
       background-size: cover;
       background-repeat: no-repeat;
       position: absolute;
-      top: pxToRem(220);
-      left: pxToRem(-90);
+      top: pxToRem(385);
+      left: pxToRem(-30);
       z-index: 20;
     }
 
