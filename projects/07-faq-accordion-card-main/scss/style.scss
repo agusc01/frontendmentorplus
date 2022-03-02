@@ -1,0 +1,225 @@
+// # Front-end Style Guide
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+
+// #### Text
+// - Very dark desaturated blue: hsl(238, 29%, 16%)
+// - Soft red: hsl(14, 88%, 65%)
+
+// #### Gradient
+// Background gradient:
+// - Soft violet: hsl(273, 75%, 66%)
+// - Soft blue: hsl(240, 73%, 65%)
+
+// ### Neutral
+// #### Text
+// - Very dark grayish blue: hsl(237, 12%, 33%)
+// - Dark grayish blue: hsl(240, 6%, 50%)
+
+// #### Dividers
+// - Light grayish blue: hsl(240, 5%, 91%)
+
+// ## Typography
+// ### Body Copy
+// - Font size: 12px
+// ### Font
+// - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+// - Weights: 400, 700
+
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+* {
+  font-size: concat($font-size, 'px');
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 135vh;
+  width: 100%;
+  background-image: linear-gradient(
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  max-width: pxToRem(375);
+  border-radius: 1.5rem;
+  padding: 10rem 0 2rem;
+  margin: $cardMarginTop auto $cardMarginBotton;
+
+  &__background-container {
+    top: pxToRem(-137);
+    left: calc(50% - #{$sizeBackgroundContainer} / 2);
+    position: absolute;
+    height: $sizeBackgroundContainer;
+    width: $sizeBackgroundContainer;
+    background-image: url('../../images/illustration-woman-online-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    &--shadow {
+      background-image: url('../../images/bg-pattern-mobile.svg');
+      top: 0;
+    }
+  }
+
+  &__wrapper {
+    width: inherit;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.accordion {
+  border-bottom: pxToRem(1) solid #333;
+  // padding: 1rem 0;
+  // padding-bottom: 1rem;
+  &:last-child {
+    border: none;
+  }
+  &__title {
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 0;
+    color: hsl(237, 12%, 33%);
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+
+    &:hover {
+      color: hsl(14, 88%, 65%);
+    }
+
+    &--bolder {
+      color: #000;
+      font-weight: 700;
+    }
+  }
+
+  &__container {
+    width: 90%;
+    // height: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    //transition doesn't work with "height", only with "max-height" the trouble is "max-height" can't use "auto". BUT you can use a big number and use overflow: hidden
+    transition: all $timeTransition * 5;
+    &--visible {
+      // height: auto;
+      max-height: pxToRem(500);
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: hsl(240, 6%, 50%);
+  }
+
+  &__arrow {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 0;
+    background-image: url('../../images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all $timeTransition;
+
+    &--open {
+      transform: rotate(180deg);
+      top: 1rem;
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 3rem;
+  text-align: center;
+  z-index: 20;
+  &__text {
+    margin: 0;
+  }
+}
+
+@media (min-width: pxToRem(800)) {
+  .main {
+    height: 100vh;
+  }
+  .card {
+    max-width: pxToRem(1000);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 0;
+    overflow: hidden;
+
+    &__background-container {
+      $sizeBackgroundContainer: pxToRem(450);
+      top: pxToRem(100);
+      left: pxToRem(-70);
+      position: absolute;
+      height: $sizeBackgroundContainer;
+      width: $sizeBackgroundContainer;
+      background-image: url('../../images/illustration-woman-online-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 15;
+
+      &--shadow {
+        background-image: url('../../images/bg-pattern-desktop.svg');
+        $sizeBackgroundContainer: pxToRem(1000);
+        height: $sizeBackgroundContainer;
+        width: $sizeBackgroundContainer;
+        left: pxToRem(-620);
+        top: pxToRem(-280);
+        z-index: 10;
+      }
+    }
+
+    &__background-box {
+      height: pxToRem(180);
+      width: pxToRem(180);
+      background-image: url('../../images/illustration-box-desktop.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: pxToRem(220);
+      left: pxToRem(-90);
+      z-index: 20;
+    }
+
+    &__wrapper {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      width: 85%;
+      margin-left: 0;
+    }
+    &__title {
+      text-align: left;
+    }
+  }
+}

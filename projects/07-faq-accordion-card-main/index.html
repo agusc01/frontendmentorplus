@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../dist/css/reboot.min.css">
+  <link rel="stylesheet" href="./dist/css/style.min.css">
+
+</head>
+
+<body class="body">
+
+  <main class="main">
+    <div class="main__wrapper">
+
+
+      <aside class="card">
+
+        <div class="card__background-container"></div>
+        <div class="card__background-container card__background-container--shadow"></div>
+        <div class="card__background-box"></div>
+
+        <article class="card__wrapper">
+
+          <h2 class="card__title">FAQ</h2>
+
+          <section class="accordion" data-item="1" data-closed="true">
+            <h3 class="accordion__title">How many team members can I invite?
+              <span class="accordion__arrow"></span>
+            </h3>
+            <div class="accordion__container">
+              <p class="accordion__text">
+                You can invite up to 2 additional users on the Free plan. There is no limit on
+                team members for the Premium plan.
+              </p>
+            </div>
+          </section>
+
+          <section class="accordion" data-item="2" data-closed="false">
+            <h3 class="accordion__title">What is the maximum file upload size?
+              <span class="accordion__arrow"></span>
+            </h3>
+            <div class="accordion__container">
+              <p class="accordion__text">
+                No more than 2GB. All files in your account must fit your allotted storage space.
+              </p>
+            </div>
+          </section>
+
+          <section class="accordion" data-item="3" data-closed="true">
+            <h3 class="accordion__title">How do I reset my password?
+              <span class="accordion__arrow"></span>
+            </h3>
+            <div class="accordion__container">
+              <p class="accordion__text">
+                Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.
+              </p>
+            </div>
+          </section>
+
+          <section class="accordion" data-item="4" data-closed="true">
+            <h3 class="accordion__title">Can I cancel my subscription?
+              <span class="accordion__arrow"></span>
+            </h3>
+            <div class="accordion__container">
+              <p class="accordion__text">
+                Yes! Send us a message and we’ll process your request no questions asked.
+              </p>
+            </div>
+          </section>
+
+          <section class="accordion" data-item="5" data-closed="true">
+            <h3 class="accordion__title">Do you provide additional support?
+              <span class="accordion__arrow"></span>
+            </h3>
+            <div class="accordion__container">
+              <p class="accordion__text">
+                Chat and email support is available 24/7. Phone lines are open during normal business hours.
+              </p>
+            </div>
+          </section>
+        </article>
+
+      </aside>
+    </div>
+    <div class="attribution">
+      <p class="attribution__text">Challenge by
+        <a class="attribution__link" href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"
+          target="_blank">
+          Frontend Mentor</a>.
+        Coded by
+        <a class="attribution__link" href="https://github.com/agusc01/frontendmentorplus"
+          target="_blank">github.com/agusc01/</a>.
+        <a class="attribution__link" href="./../../index.html">Go Home</a>
+      </p>
+    </div>
+
+  </main>
+
+  <script src="dist/js/app.js"></script>
+</body>
+
+</html>
