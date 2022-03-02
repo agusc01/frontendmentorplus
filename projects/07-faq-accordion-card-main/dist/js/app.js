@@ -1,7 +1,5 @@
 const accordions = document.querySelectorAll('.accordion');
-const accordionTitles = document.querySelectorAll(
-  '.accordion__title'
-);
+const titles = document.querySelectorAll('.accordion__title');
 
 const selectCard = (target) => {
   // the goal is to take accordion
@@ -13,36 +11,28 @@ const selectCard = (target) => {
 };
 
 const toggleArrow = (accordion) => {
-  let cardArrow = accordion.querySelector('.accordion__arrow');
-  cardArrow.classList.toggle('accordion__arrow--open');
+  let arrow = accordion.querySelector('.accordion__arrow');
+  arrow.classList.toggle('accordion__arrow--open');
 };
 
 const toggleText = (accordion) => {
-  let accordionContainerText = accordion.querySelector(
-    '.accordion__container'
-  );
-  accordionContainerText.classList.toggle(
-    'accordion__container--visible'
-  );
+  let text = accordion.querySelector('.accordion__container');
+  text.classList.toggle('accordion__container--visible');
 };
 
 const toggleTitle = (accordion) => {
-  let accordionTitle = accordion.querySelector('.accordion__title');
-  accordionTitle.classList.toggle('accordion__title--bolder');
+  let title = accordion.querySelector('.accordion__title');
+  title.classList.toggle('accordion__title--bolder');
 };
 
 const closeAllAccordions = () => {
   accordions.forEach((accordion) => {
-    let accordionTitle = accordion.querySelector('.accordion__title');
-    accordionTitle.classList.remove('accordion__title--bolder');
-    let cardArrow = accordion.querySelector('.accordion__arrow');
-    cardArrow.classList.remove('accordion__arrow--open');
-    let accordionContainerText = accordion.querySelector(
-      '.accordion__container'
-    );
-    accordionContainerText.classList.remove(
-      'accordion__container--visible'
-    );
+    let title = accordion.querySelector('.accordion__title');
+    title.classList.remove('accordion__title--bolder');
+    let arrow = accordion.querySelector('.accordion__arrow');
+    arrow.classList.remove('accordion__arrow--open');
+    let text = accordion.querySelector('.accordion__container');
+    text.classList.remove('accordion__container--visible');
   });
 };
 
@@ -53,8 +43,8 @@ const toggleSection = (accordion) => {
   toggleTitle(accordion);
 };
 
-accordionTitles.forEach((accordionTitle) => {
-  accordionTitle.addEventListener(
+titles.forEach((title) => {
+  title.addEventListener(
     'click',
     (event) => {
       let accordion = selectCard(event.target);
