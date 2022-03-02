@@ -31,7 +31,23 @@ const toggleTitle = (accordion) => {
   accordionTitle.classList.toggle('accordion__title--bolder');
 };
 
+const closeAllAccordions = () => {
+  accordions.forEach((accordion) => {
+    let accordionTitle = accordion.querySelector('.accordion__title');
+    accordionTitle.classList.remove('accordion__title--bolder');
+    let cardArrow = accordion.querySelector('.accordion__arrow');
+    cardArrow.classList.remove('accordion__arrow--open');
+    let accordionContainerText = accordion.querySelector(
+      '.accordion__container'
+    );
+    accordionContainerText.classList.remove(
+      'accordion__container--visible'
+    );
+  });
+};
+
 const toggleSection = (accordion) => {
+  closeAllAccordions();
   toggleArrow(accordion);
   toggleText(accordion);
   toggleTitle(accordion);
