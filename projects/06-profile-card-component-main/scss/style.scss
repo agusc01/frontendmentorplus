@@ -22,6 +22,7 @@
 
 @import 'functions';
 @import 'mixins';
+@import 'variables';
 
 $font-size: 18;
 
@@ -46,22 +47,11 @@ $font-size: 18;
     height: 100%;
     width: 100%;
     z-index: 2;
-    &--top {
-      background-image: url('../../images/bg-pattern-top.svg');
-      top: -15%;
-      left: -50%;
-    }
-    &--bottom {
-      background-image: url('../../images/bg-pattern-bottom.svg');
-      bottom: -60%;
-      right: -50%;
-    }
+    background-image: url('../../images/bg-pattern-top.svg'),
+      url('../../images/bg-pattern-bottom.svg');
+    background-position: right 52vw bottom 35vh, left 48vw top 52vh;
   }
 }
-
-$widthCard: 350;
-$widthAvatar: 120;
-$backcolorCard: #fff;
 
 .card {
   position: relative;
@@ -96,22 +86,21 @@ $backcolorCard: #fff;
     white-space: pre-wrap;
   }
   &__text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: hsl(0, 0%, 59%);
     &--info {
       font-size: 1rem;
       font-size: 0.75rem;
       font-weight: 400;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
   }
   &__stats {
     display: flex;
     justify-content: space-evenly;
     border-top: 0.05rem solid hsl(0, 0%, 59%);
-    padding: 0.5rem 0;
   }
   &__stat {
     margin-bottom: 0.25rem;
@@ -120,88 +109,10 @@ $backcolorCard: #fff;
 }
 
 .attribution {
-  position: absolute;
-  bottom: 1.5rem;
+  position: fixed;
   text-align: center;
-  z-index: 20;
+  bottom: 1.5rem;
   &__text {
     margin: 0;
-  }
-}
-
-// @media screen and (min-width: 460px) {
-//   .main {
-//     // background-color: red;
-//   }
-// }
-
-@media screen and (min-width: 600px) {
-  .main {
-    // background-color: blue;
-    &__background {
-      &--top {
-        top: -35%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .main {
-    // background-color: yellow;
-    &__background {
-      &--top {
-        top: -40%;
-        left: -40%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 950px) {
-  .main {
-    // background-color: green;
-    &__background {
-      &--top {
-        top: -45%;
-        left: -30%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .main {
-    // background-color: pink;
-    &__background {
-      &--top {
-        top: -50%;
-        left: -15%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .main {
-    // background-color: purple;
-    &__background {
-      &--top {
-        top: -50%;
-        left: -10%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .main {
-    // background-color: orange;
-    &__background {
-      &--top {
-        top: -55%;
-        left: -5%;
-      }
-    }
   }
 }
