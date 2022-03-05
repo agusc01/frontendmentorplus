@@ -1,0 +1,7 @@
+@function pxToRem($number) {
+  @return concat($number / $font-size, 'rem');
+}
+
+@function concat($str1, $str2) {
+  @return unquote($string: $str1 + $str2);
+}
