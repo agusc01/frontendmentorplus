@@ -7,3 +7,9 @@ $color-blue: hsl(212, 86%, 64%);
 $color-very-dark-blue: hsl(234, 12%, 34%);
 $color-grayish-blue: hsl(229, 6%, 66%);
 $color-very-light-gray: hsl(0, 0%, 98%);
+
+$width-card: pxToRem(335);
+$breakpoint-desktop: pxToRem(335 * 3.5);
+
+$height-card: pxToRem(247);
+$height-card-grid: pxToRem(247/2);
