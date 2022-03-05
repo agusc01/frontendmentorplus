@@ -1,18 +1,27 @@
 const shareButton = document.querySelector('.card__icon--share');
 const facebook = document.querySelector('.card__icon--facebook');
-const shareSection = document.querySelector('#card__share-section');
+const shareSection = document.querySelector('#card-share-section');
 const links = document.querySelector('.card__share-section--links');
 const icons = document.querySelectorAll('.card__icon');
 
 shareButton.addEventListener('click', () => {
   // This it's because .card__share-section has opacity instead display
   // =============== start ===============
-  let classNameToRemove = 'd-none';
-  let classNameToAdd = 'd-block';
+  let classNameToRemove;
+  let classNameToAdd;
+
   if (links.classList.contains('opacity-1')) {
     classNameToRemove = 'd-block';
     classNameToAdd = 'd-none';
+    shareButton.src = 'images/icon-share.svg';
+  } else {
+    classNameToRemove = 'd-none';
+    classNameToAdd = 'd-block';
+    shareButton.src = 'images/icon-share-white.svg';
   }
+
+  shareButton.classList.toggle('special-colour');
+
   icons.forEach((icon) => {
     if (!icon.classList.contains('card__icon--share')) {
       icon.classList.add(`${classNameToAdd}`);

@@ -153,6 +153,10 @@
   display: none;
 }
 
+.special-colour {
+  background-color: $color-grayish-blue;
+}
+
 .attribution {
   position: absolute;
   bottom: 1.5rem;
@@ -235,6 +239,9 @@
       transform: rotate(45deg);
       bottom: -0.5rem;
       left: 6.7rem;
+    }
+    .special-colour {
+      background-color: $color-desaturated-dark-blue;
     }
   }
 }
