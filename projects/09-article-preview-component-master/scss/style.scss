@@ -200,9 +200,13 @@
     }
     &__share-section {
       &--links {
+        position: relative;
         top: -4.7rem;
-        right: pxToRem(-65);
-        width: auto;
+        right: pxToRem(-305);
+        // Cannot be used width: auto, because
+        // It doesn't work with position:relative
+        // width: auto;
+        width: 50%;
         padding: 0.5rem 2.5rem;
         border-radius: 0.75rem;
         z-index: 0;
@@ -217,6 +221,15 @@
       &--share {
         width: $width-avatar/1.2;
       }
+    }
+    &__triangle {
+      position: absolute;
+      background-color: inherit;
+      width: 1.5rem;
+      height: 1.5rem;
+      transform: rotate(45deg);
+      bottom: -0.5rem;
+      left: 8.3rem;
     }
   }
 }
