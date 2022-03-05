@@ -21,7 +21,6 @@
 // - Weights: 400, 700
 
 @import 'functions';
-@import 'mixins';
 @import 'variables';
 
 $font-size: 18;
@@ -33,20 +32,18 @@ $font-size: 18;
 
 .main {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-areas: 'card' 'footer';
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
   background-color: hsl(185, 75%, 39%);
+  overflow-y: auto;
   &__background {
     position: absolute;
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 5;
     background-image: url('../../images/bg-pattern-top.svg'),
       url('../../images/bg-pattern-bottom.svg');
     background-position: right 52vw bottom 35vh, left 48vw top 52vh;
@@ -55,13 +52,18 @@ $font-size: 18;
 
 .card {
   position: relative;
+  grid-area: card;
+  justify-self: center;
+  align-self: end;
   width: pxToRem($widthCard);
+  height: pxToRem(382);
   background-color: $backcolorCard;
   color: hsl(229, 23%, 23%);
   border-radius: 0.75rem;
   overflow: hidden;
   text-align: center;
   z-index: 10;
+  margin-top: 1rem;
   &__background {
     position: relative;
     background-image: url('../../images/bg-pattern-card.svg');
@@ -109,10 +111,10 @@ $font-size: 18;
 }
 
 .attribution {
-  position: fixed;
+  grid-area: footer;
   text-align: center;
-  bottom: 1.5rem;
-  &__text {
-    margin: 0;
-  }
+  align-self: end;
+  margin: 0 1rem;
+  position: relative;
+  z-index: 20;
 }

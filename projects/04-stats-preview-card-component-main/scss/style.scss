@@ -28,9 +28,7 @@
 // - Weights: 400
 
 @import 'functions';
-@import 'mixins';
-
-$font-size: 15;
+@import 'variables';
 
 * {
   font-family: 'Inter', sans-serif;

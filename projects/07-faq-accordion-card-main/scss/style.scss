@@ -32,7 +32,6 @@
 // - Weights: 400, 700
 
 @import 'functions';
-@import 'mixins';
 @import 'variables';
 
 * {
@@ -42,16 +41,19 @@
 
 .main {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-areas: 'main-wrapper' 'footer';
   justify-content: center;
-  align-items: center;
-  height: 115vh;
+  height: 100vh;
   width: 100%;
+  overflow-y: auto;
   background-image: linear-gradient(
     hsl(273, 75%, 66%),
     hsl(240, 73%, 65%)
   );
-  overflow: hidden;
+  &__wrapper {
+    grid-area: main-wrapper;
+  }
 }
 
 .card {
@@ -161,19 +163,12 @@
 }
 
 .attribution {
-  position: absolute;
-  bottom: 3rem;
+  grid-area: footer;
   text-align: center;
-  z-index: 20;
-  &__text {
-    margin: 0;
-  }
+  margin: 0 1rem;
 }
 
 @media (min-width: pxToRem(800)) {
-  .main {
-    height: 100vh;
-  }
   .card {
     &__container {
       max-width: pxToRem(1000);
@@ -213,7 +208,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       position: absolute;
-      top: pxToRem(385);
+      top: pxToRem(210);
       left: pxToRem(-30);
       z-index: 20;
     }

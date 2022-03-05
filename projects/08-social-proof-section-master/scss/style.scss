@@ -22,7 +22,6 @@
 // - Weights: 400, 500, 700
 
 @import 'functions';
-@import 'mixins';
 $font-size: 15;
 
 * {
@@ -31,8 +30,9 @@ $font-size: 15;
 }
 
 .main {
-  position: relative;
-  height: 170vh;
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 'main' 'footer';
   min-width: pxToRem(400);
   max-width: pxToRem(1600);
   margin-left: auto;
@@ -42,6 +42,7 @@ $font-size: 15;
   background-repeat: no-repeat;
   background-position: bottom right, top left;
   &__wrapper {
+    grid-area: main;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -87,7 +88,6 @@ $font-size: 15;
 .card {
   display: grid;
   grid-template-rows: 2rem 2rem 1fr;
-  // grid-template-columns: 3rem 1fr;
   grid-template-columns: 2rem 1fr;
   padding: 2rem 2rem 2rem;
   margin: 1rem 0;
@@ -124,9 +124,14 @@ $font-size: 15;
   }
 }
 
+.attribution {
+  grid-area: footer;
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
 @media (min-width: pxToRem(965)) {
   .main {
-    height: 100vh;
     background-image: url('../../images/bg-pattern-bottom-desktop.svg'),
       url('../../images/bg-pattern-top-desktop.svg');
 
@@ -189,16 +194,5 @@ $font-size: 15;
       margin-bottom: 3rem;
       margin-top: 6rem;
     }
-  }
-}
-
-.attribution {
-  position: absolute;
-  bottom: 3rem;
-  text-align: center;
-  width: 100%;
-  z-index: 20;
-  &__text {
-    margin: 0;
   }
 }

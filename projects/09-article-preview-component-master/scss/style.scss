@@ -34,16 +34,19 @@
 }
 
 .main {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-areas: 'card' 'footer';
   height: 100vh;
   width: 100%;
+  overflow-y: auto;
+  padding: 1rem 0;
   background-color: $color-light-grayish-blue;
 }
 
 .card {
+  grid-area: card;
+  justify-self: center;
+  align-self: end;
   width: pxToRem(375);
   border-radius: $border-radius-card;
   background-color: #fff;
@@ -158,8 +161,9 @@
 }
 
 .attribution {
-  position: absolute;
-  bottom: 1.5rem;
+  grid-area: footer;
+  justify-self: center;
+  align-self: end;
   margin: 0 1.5rem;
   text-align: center;
 }
@@ -178,7 +182,6 @@
       grid-column: 1/2;
       height: pxToRem($card-height-desktop);
       border-radius: $border-radius-card 0 0 $border-radius-card;
-      object-fit: cover;
       //https://www.w3schools.com/cssref/css3_pr_object-position.asp
       object-position: 0 0;
     }

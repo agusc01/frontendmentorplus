@@ -25,14 +25,13 @@
 // - Weights: 700
 
 @import 'functions';
-@import 'mixins';
+@import 'variables';
 
 %font-deca {
   font-family: 'Lexend Deca', sans-serif;
   font-weight: 400;
 }
-$font-size: 15;
-$main-color: hsl(0, 0%, 95%);
+
 * {
   font-family: 'Big Shoulders Display', cursive;
   font-weight: 700;
@@ -40,18 +39,20 @@ $main-color: hsl(0, 0%, 95%);
 }
 
 .main {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  //TODO: height and width in differentes sizes
+  display: grid;
   align-items: center;
-  height: 180vh;
+  grid-template-areas: 'cards' 'footer';
+  height: 100%;
   width: 100%;
+  overflow-y: auto;
   background-color: $main-color;
 }
 
 .cards {
+  grid-area: cards;
   width: pxToRem(300);
-
+  margin: 1rem auto;
   background-color: hsl(244, 38%, 16%);
   color: hsla(0, 0%, 100%, 0.75);
   border-radius: 0.5rem;
@@ -110,12 +111,10 @@ $main-color: hsl(0, 0%, 95%);
 }
 
 .attribution {
-  position: absolute;
-  bottom: 1.5rem;
+  grid-area: footer;
+  align-self: end;
+  margin: 0 1rem;
   text-align: center;
-  &__text {
-    margin: 0;
-  }
 }
 
 @media (min-width: pxToRem(850)) {
