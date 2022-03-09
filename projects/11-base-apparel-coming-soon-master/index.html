@@ -14,25 +14,45 @@
 
 <body class="body">
 
-  We're coming soon
+  <main class="main">
 
-  Hello fellow shoppers! We're currently building our new fashion store.
-  Add your email below to stay up-to-date with announcements and our launch deals.
+    <img src="images/logo.svg" alt="logo" class="main__logo">
+    <div class="main__background"></div>
+    <div class="main__wrapper">
+      <div class="main__wrapper">
+        <h1 class="main__title">We're <span class="main__title main__title--important">coming soon</span></h1>
 
-  Email Address
+        <p class="main__text">Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
+        <form class="form" novalidate>
 
+          <input type="email" placeholder="Email Address" class="form__email">
+          <img src="images/icon-error.svg" alt="icon error" class="form__icon form__icon--error">
+          <button class="form__button">
+            <img src="images/icon-arrow.svg" alt="icon arrow" class="form__icon form__icon--arrow">
+          </button>
+          <p class="form__text form__text--error">Please provide a valid email</p>
+        </form>
 
-  <footer class="attribution">
-    <p>Challenge by
-      <a href="https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0"
-        target="_blank">
-        Frontend Mentor</a>.
-      Coded by
-      <a href="https://github.com/agusc01/frontendmentorplus" target="_blank">github.com/agusc01/</a>.
-      <a href="./../../index.html">Go Home</a>
-    </p>
-  </footer>
+      </div>
+    </div>
+    <footer class="attribution">
+      <p class="attribution__text">Challenge by
+        <a class="attribution__link"
+          href="https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0"
+          target="_blank">
+          Frontend Mentor</a>.
+        Coded by
+        <a class="attribution__link" href="https://github.com/agusc01/frontendmentorplus"
+          target="_blank">github.com/agusc01/</a>.
+        <a class="attribution__link" href="./../../index.html">Go Home</a>
+      </p>
+    </footer>
+  </main>
+
+  <script src="dist/js/app.js"></script>
+
 </body>
 
 </html>
