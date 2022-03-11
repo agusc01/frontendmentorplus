@@ -125,6 +125,9 @@
 
     width: 2rem;
     cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
     &--share {
       position: absolute;
       top: $footer-padding + 0.5rem;
@@ -135,6 +138,9 @@
       background-color: $color-light-grayish-blue;
       cursor: pointer;
       z-index: 20;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }

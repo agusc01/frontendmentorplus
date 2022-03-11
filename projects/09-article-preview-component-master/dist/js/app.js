@@ -3,6 +3,7 @@ const facebook = document.querySelector('.card__icon--facebook');
 const shareSection = document.querySelector('#card-share-section');
 const links = document.querySelector('.card__share-section--links');
 const icons = document.querySelectorAll('.card__icon');
+const title = document.querySelector('#title');
 
 shareButton.addEventListener('click', () => {
   // This it's because .card__share-section has opacity instead display
@@ -43,3 +44,15 @@ window.addEventListener('resize', () => {
     shareSection.classList.add('opacity-0');
   }
 });
+
+// Typewriter animation
+const typeWriter = (element) => {
+  const textArray = element.innerText.split('');
+  element.innerText = '';
+
+  textArray.forEach((letter, i) =>
+    setTimeout(() => (element.innerHTML += letter), 75 * i)
+  );
+};
+
+typeWriter(title);
