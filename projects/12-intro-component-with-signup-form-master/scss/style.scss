@@ -25,7 +25,102 @@
 
 @import 'variables';
 @import 'functions';
+@import 'mixins';
 * {
   font-size: concat($font-size, 'px');
   font-family: 'Poppins', sans-serif;
+}
+
+.main {
+  padding: 4rem 1.5rem 1.5rem;
+  height: 100vh;
+  overflow: auto;
+  background: $color-red url('../../images/bg-intro-mobile.png');
+  background-size: cover;
+  color: $color-white;
+  &__header {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 4rem;
+  }
+  &__title {
+    line-height: 2.5rem;
+  }
+  &__text {
+    line-height: 1.5rem;
+  }
+}
+
+.form {
+  &__wrapper {
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: $color-white;
+    @include shadowTransparent;
+  }
+  &__input {
+    display: block;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    outline: 0.1rem solid #ccc;
+    border: none;
+    border-radius: 0.4rem;
+    width: 100%;
+  }
+  &__text {
+    color: $color-grayish-blue;
+    text-align: center;
+  }
+  &__link {
+    font-weight: 600;
+    text-decoration: none;
+    color: red;
+  }
+}
+.button {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: $color-blue;
+  @include shadowTransparent;
+  cursor: pointer;
+  transition: transform 0.5s, box-shadow 0.5s;
+  @include hoverTranslateY($translateY-button);
+  &__text {
+    width: 70%;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    line-height: 2.2rem;
+  }
+  &--free-trail {
+    text-transform: uppercase;
+    color: inherit;
+    letter-spacing: 0.075rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    background-color: $color-green;
+    box-shadow: 0 $translateY-button--free-trail 0 $color-green-shadow;
+    @include hoverTranslateY($translateY-button--free-trail);
+  }
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  font-weight: $font-weight-placeholder;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  font-weight: $font-weight-placeholder;
+}
+
+::placeholder {
+  font-weight: $font-weight-placeholder;
+}
+
+.attribution {
+  text-align: center;
 }

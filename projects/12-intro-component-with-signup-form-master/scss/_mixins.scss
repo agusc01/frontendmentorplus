@@ -1,0 +1,10 @@
+@mixin hoverTranslateY($y) {
+  &:hover {
+    box-shadow: none;
+    transform: translateY($y);
+  }
+}
+
+@mixin shadowTransparent {
+  box-shadow: 0 $translateY-button 0 $color-transparent-shadow;
+}
