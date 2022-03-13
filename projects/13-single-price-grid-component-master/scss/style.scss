@@ -35,8 +35,8 @@
   min-height: 100vh;
   display: grid;
   justify-content: center;
-  grid-row: 1fr auto;
-  grid-column: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
   background-color: $color-light-gray;
   padding: 0.05px 0 3rem;
 }
