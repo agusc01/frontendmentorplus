@@ -3,44 +3,48 @@
   font-family: 'Karla', sans-serif;
 }
 
-.card__header, .card__body {
-  padding: 1.7rem;
-  color: #fff;
-}
-
 .main {
   position: relative;
   min-height: 100vh;
-  background-color: #e5eff5;
-  padding: 0.05px 0 3rem;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-      grid-template-areas: 'card' 'footer';
+  grid-row: 1fr auto;
+  -ms-grid-column: 1;
+  grid-column: 1fr;
+  background-color: #e5eff5;
+  padding: 0.05px 0 3rem;
 }
 
 .card {
-  max-width: 23.4375rem;
-  margin: 1rem auto 0;
   -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
   -ms-grid-column: 1;
-  grid-area: card;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   -ms-grid-column-align: center;
       justify-self: center;
+  max-width: 23.4375rem;
+  margin: 1rem auto 0;
   border-radius: 0.4rem;
   overflow: hidden;
 }
 
 .card__header {
+  padding: 1.7rem;
+  color: #fff;
   background-color: #fff;
 }
 
 .card__body {
+  padding: 1.7rem;
+  color: #fff;
   background-color: #2ab2af;
 }
 
@@ -116,8 +120,11 @@
 
 .attribution {
   -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
   -ms-grid-column: 1;
-  grid-area: footer;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -155,5 +162,42 @@
   0% {
     -webkit-box-shadow: 0 0 0 0 #c0df34;
             box-shadow: 0 0 0 0 #c0df34;
+  }
+}
+
+@media screen and (min-width: 53.125rem) {
+  .card {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'header header' 'left right';
+    max-width: 46.875rem;
+    border-radius: 0.7rem;
+  }
+  .card__header {
+    padding: 3rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header;
+  }
+  .card__body {
+    padding: 3rem;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  .card__body--right {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: right;
+  }
+  .card__title {
+    font-size: 1.8rem;
+  }
+  .card__title--yellow {
+    font-size: 1.35rem;
+  }
+  .card__text {
+    font-size: 1.2rem;
   }
 }

@@ -1,0 +1,6 @@
+@mixin padding-card-container($padding, $flagColor: false) {
+  padding: $padding;
+  @if $flagColor {
+    color: $color-white;
+  }
+}
