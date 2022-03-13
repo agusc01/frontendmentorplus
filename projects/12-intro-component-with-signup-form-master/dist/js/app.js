@@ -1,9 +1,4 @@
-const $ = (selector) => {
-  return document.querySelector(selector);
-};
-
 const form = $('.form');
-
 const inputEmail = $('.form__input--email');
 const inputFirstName = $('.form__input--first-name');
 const inputLastName = $('.form__input--last-name');

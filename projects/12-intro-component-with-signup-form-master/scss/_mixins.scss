@@ -1,5 +1,5 @@
-@mixin hoverTranslateY($y) {
-  &:hover {
+@mixin activeTranslateY($y) {
+  &:active {
     box-shadow: none;
     transform: translateY($y);
   }
