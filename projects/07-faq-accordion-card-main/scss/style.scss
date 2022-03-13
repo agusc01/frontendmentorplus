@@ -44,7 +44,7 @@
   display: grid;
   grid-template-areas: 'main-wrapper' 'footer';
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow-y: auto;
   background-image: linear-gradient(
@@ -117,12 +117,12 @@
     }
 
     &--bolder {
-      color: #000;
-      font-weight: 700;
+      // color: #000;
+      // font-weight: 700;
     }
   }
 
-  &__container {
+  &__body {
     width: 90%;
     // height: 0;
     max-height: 0;
@@ -130,11 +130,6 @@
     opacity: 0;
     //transition doesn't work with "height", only with "max-height" the trouble is "max-height" can't use "auto". BUT you can use a big number and use overflow: hidden
     transition: all $timeTransition * 5;
-    &--visible {
-      // height: auto;
-      max-height: pxToRem(500);
-      opacity: 1;
-    }
   }
 
   &__text {
@@ -154,10 +149,21 @@
     background-repeat: no-repeat;
     background-size: contain;
     transition: all $timeTransition;
+  }
 
-    &--open {
+  //I know this breaks the BEM rules, but it saves a lot of lines in javascript
+  &--active {
+    .accordion__arrow {
       transform: rotate(180deg);
       top: 1rem;
+    }
+    .accordion__title {
+      color: #000;
+      font-weight: 700;
+    }
+    .accordion__body {
+      max-height: pxToRem(500);
+      opacity: 1;
     }
   }
 }
