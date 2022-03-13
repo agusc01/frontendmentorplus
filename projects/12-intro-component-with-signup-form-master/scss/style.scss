@@ -58,18 +58,36 @@
     background-color: $color-white;
     @include shadowTransparent;
   }
+  &__container {
+    position: relative;
+    text-align: right;
+  }
   &__input {
     display: block;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
+    padding: 1.25rem 3rem 1.25rem 1.25rem;
+    margin: 1.25rem 0;
     outline: 0.1rem solid #ccc;
     border: none;
     border-radius: 0.4rem;
     width: 100%;
   }
+
+  &__icon-error {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
   &__text {
     color: $color-grayish-blue;
     text-align: center;
+    &--error {
+      display: none;
+      text-align: right;
+      color: $color-red;
+      margin-top: 0.5rem;
+    }
   }
   &__link {
     font-weight: 600;
@@ -77,6 +95,16 @@
     color: red;
   }
 }
+
+.form__container.error {
+  .form__icon-error {
+    opacity: 1;
+  }
+  .form__text--error {
+    display: block;
+  }
+}
+
 .button {
   width: 100%;
   text-align: center;
