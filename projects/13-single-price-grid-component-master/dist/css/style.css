@@ -33,6 +33,8 @@
   max-width: 23.4375rem;
   margin: 1rem auto 0;
   border-radius: 0.4rem;
+  -webkit-box-shadow: 0.75rem 0.75rem 0.9rem #ccc;
+          box-shadow: 0.75rem 0.75rem 0.9rem #ccc;
   overflow: hidden;
 }
 

@@ -49,6 +49,7 @@
   max-width: pxToRem(375);
   margin: 1rem auto 0;
   border-radius: 0.4rem;
+  box-shadow: 0.75rem 0.75rem 0.9rem #ccc;
   overflow: hidden;
   &__header {
     @include padding-card-container(1.7rem, true);
