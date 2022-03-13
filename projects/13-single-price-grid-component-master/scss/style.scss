@@ -29,8 +29,128 @@
   font-family: 'Karla', sans-serif;
 }
 
+%padding-card-container {
+  padding: 1.7rem;
+  color: $color-white;
+}
+
 .main {
+  position: relative;
   min-height: 100vh;
   background-color: $color-light-gray;
-  padding: 0.05px; //para colapso de margenes entre padre/hijo
+  padding: 0.05px 0 3rem;
+  display: grid;
+  justify-content: center;
+  grid-template-areas: 'card' 'footer';
+}
+
+.card {
+  max-width: pxToRem(375);
+  margin: 1rem auto 0;
+  grid-area: card;
+  align-self: center;
+  justify-self: center;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  &__header {
+    @extend %padding-card-container;
+    background-color: $color-white;
+  }
+  &__body {
+    @extend %padding-card-container;
+    background-color: $color-cyan;
+    &--right {
+      background-color: $color-light-cyan;
+    }
+  }
+  &__title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: $color-cyan;
+    &--yellow {
+      font-size: 1.2rem;
+      color: $color-bright-yellow;
+    }
+  }
+  &__text {
+    color: $color-light-cyan;
+    line-height: 1.8rem;
+    &--inherit-color {
+      margin: 0 0 2rem;
+      font-size: 1.2rem;
+      color: inherit;
+    }
+  }
+  &__subtitle {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    color: inherit;
+    background-color: $color-bright-yellow;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  &__item {
+    margin: 0 0 0.25rem;
+    color: $color-light-gray;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  &__text {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 700;
+    &--month {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-left: 1rem;
+      color: $color-light-cyan;
+    }
+  }
+}
+
+.attribution {
+  grid-area: footer;
+  align-self: end;
+  text-align: center;
+  // position: absolute;
+  // bottom: 0;
+  // width: 100%;
+  // &__text {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+}
+
+.button {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  color: inherit;
+  background-color: $color-bright-yellow;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  &:active,
+  &:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    text-decoration: underline;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 $color-bright-yellow;
+    }
+  }
 }
