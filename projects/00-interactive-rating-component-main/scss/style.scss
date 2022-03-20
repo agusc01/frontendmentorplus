@@ -68,25 +68,6 @@
     color: $color-light-grey;
   }
 
-  &__button {
-    display: block;
-    width: 100%;
-    padding: 0.9rem;
-    border: none;
-    border-radius: 2rem;
-    text-transform: uppercase;
-    color: inherit;
-    background-color: $color-orange;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-    cursor: pointer;
-    transition: color 0.5s, background-color 0.5s;
-    &:hover {
-      color: $color-orange;
-      background-color: $color-white;
-    }
-  }
-
   &__question {
     position: absolute;
     top: 0;
@@ -104,8 +85,6 @@
   }
   &.sent {
     .card__question {
-      // left: inherit;
-      // right: pxToRem($width-card);
       left: pxToRem(-$width-card);
     }
     .card__answer {
@@ -125,19 +104,67 @@
   }
 }
 
+.button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: $height-button;
+  border: none;
+  border-radius: $radius-button;
+  text-transform: uppercase;
+  color: inherit;
+  background-color: $color-orange;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    & .button__effect {
+      left: 0;
+    }
+    & .button__text {
+      color: $color-orange;
+    }
+  }
+  &:active {
+    transform: translateY(0.5rem);
+  }
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    // background-color: red;
+    display: block;
+    width: 100%;
+    height: $height-button;
+    line-height: $height-button;
+  }
+  &__effect {
+    position: absolute;
+    background-color: $color-white;
+    border-radius: $radius-button;
+    width: 100%;
+    height: $height-button;
+    top: 0;
+    left: pxToRem(-$width-card);
+    z-index: 5;
+    transition: left 0.9s;
+  }
+}
+
 .rated {
   display: flex;
   padding: 1rem 0 2rem;
   justify-content: space-between;
   &__item {
     @include circle(1rem, 1.2rem, true);
-    transition: color 0.5s, background-color 0.5s, transform 0.3s;
+    transition: color 0.7s, background-color 0.7s, transform 0.5s;
     &:hover {
       font-weight: 700;
       color: $color-white;
       background-color: $color-orange;
     }
-
     &:active {
       transform: scale(0.7);
     }

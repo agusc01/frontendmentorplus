@@ -29,13 +29,14 @@ const getValueRadioInput = () => {
 };
 
 form.addEventListener('click', (e) => {
-  global = e;
   if (e.target.id == 'submit') {
     e.preventDefault();
-
-    card.classList.add('sent');
-    feedBack.textContent = `You selected ${getValueRadioInput()} out of ${
-      radioInputs.length
-    }`;
+    let valueInput = getValueRadioInput();
+    if (valueInput != -1) {
+      card.classList.add('sent');
+      feedBack.textContent = `You selected ${valueInput} out of ${radioInputs.length}`;
+    } else {
+      window.alert('Please take a rating to submit');
+    }
   }
 });
