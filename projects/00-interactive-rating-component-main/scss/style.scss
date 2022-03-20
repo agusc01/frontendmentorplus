@@ -42,8 +42,8 @@
 
 %card {
   width: pxToRem($width-card);
-  height: pxToRem(390);
-  border-radius: 1rem;
+  height: pxToRem(400);
+  border-radius: 1.5rem;
   padding: 2rem 1.75rem;
 }
 
@@ -66,6 +66,9 @@
   &__text {
     line-height: 1.5rem;
     color: $color-light-grey;
+    &--thanks {
+      font-size: 0.97rem;
+    }
   }
 
   &__question {
@@ -121,14 +124,14 @@
     & .button__effect {
       left: 0;
     }
-    & .button__text {
+    & .button__submit {
       color: $color-orange;
     }
   }
   &:active {
     transform: translateY(0.5rem);
   }
-  &__text {
+  &__submit {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,8 +142,15 @@
     line-height: $height-button;
     background-color: transparent;
     border: none;
-    cursor: pointer;
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+    :not(&--disabled) {
+      cursor: pointer;
+    }
   }
+
   &__effect {
     position: absolute;
     background-color: $color-white;

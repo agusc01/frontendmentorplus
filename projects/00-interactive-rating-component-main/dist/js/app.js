@@ -1,5 +1,6 @@
 const form = document.querySelector('.form');
 const card = document.querySelector('.card');
+const buttonSubmit = document.querySelector('#submit');
 const feedBack = document.querySelector('.card__feedback');
 const radioInputs = document.querySelectorAll('.rated__input');
 
@@ -29,6 +30,7 @@ const getValueRadioInput = () => {
 };
 
 form.addEventListener('click', (e) => {
+  console.log(e.target);
   if (e.target.id == 'submit') {
     e.preventDefault();
     let valueInput = getValueRadioInput();
@@ -38,5 +40,10 @@ form.addEventListener('click', (e) => {
     } else {
       window.alert('Please take a rating to submit');
     }
+  } else if (
+    e.target.classList.contains('rated__input') ||
+    e.target.classList.contains('rated__item')
+  ) {
+    buttonSubmit.classList.remove('button__submit--disabled');
   }
 });
