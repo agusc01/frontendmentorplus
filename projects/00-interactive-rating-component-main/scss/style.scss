@@ -116,7 +116,6 @@
   background-color: $color-orange;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  cursor: pointer;
   overflow: hidden;
   &:hover {
     & .button__effect {
@@ -134,11 +133,13 @@
     top: 0;
     left: 0;
     z-index: 10;
-    // background-color: red;
     display: block;
     width: 100%;
     height: $height-button;
     line-height: $height-button;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
   &__effect {
     position: absolute;
