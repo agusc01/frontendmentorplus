@@ -40,17 +40,20 @@
   background-color: $color-very-dark-blue;
 }
 
-%circle {
+%card {
+  width: pxToRem($width-card);
+  height: pxToRem(390);
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
 }
 
 .card {
+  position: relative;
   grid-area: card;
   place-self: center;
-  width: pxToRem(360);
-  height: pxToRem(390);
+  @extend %card;
   background-color: $color-card;
-  border-radius: 1rem;
-  padding: 2rem 1.75rem;
+  overflow: hidden;
   &__icon {
     @include circle;
   }
@@ -85,17 +88,28 @@
   }
 
   &__question {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %card;
+    transition: all 1s;
   }
   &__answer {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: pxToRem($width-card);
+    @extend %card;
     text-align: center;
+    transition: left 1s;
   }
   &.sent {
     .card__question {
-      display: none;
+      // left: inherit;
+      // right: pxToRem($width-card);
+      left: pxToRem(-$width-card);
     }
     .card__answer {
-      display: block;
+      left: 0;
     }
   }
 
@@ -117,11 +131,15 @@
   justify-content: space-between;
   &__item {
     @include circle(1rem, 1.2rem, true);
-    transition: color 0.5s, background-color 0.5s;
+    transition: color 0.5s, background-color 0.5s, transform 0.3s;
     &:hover {
       font-weight: 700;
       color: $color-white;
       background-color: $color-orange;
+    }
+
+    &:active {
+      transform: scale(0.7);
     }
   }
   &__input {
@@ -136,5 +154,8 @@
 
 .attribution {
   grid-area: footer;
-  margin: 0 auto;
+  text-align: center;
+  &__link {
+    color: $color-orange;
+  }
 }

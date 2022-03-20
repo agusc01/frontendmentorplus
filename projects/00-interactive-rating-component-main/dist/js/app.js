@@ -1,5 +1,4 @@
 const form = document.querySelector('.form');
-const submit = document.querySelector('#submit');
 const card = document.querySelector('.card');
 const feedBack = document.querySelector('.card__feedback');
 const radioInputs = document.querySelectorAll('.rated__input');
@@ -30,7 +29,8 @@ const getValueRadioInput = () => {
 };
 
 form.addEventListener('click', (e) => {
-  if (e.target == submit) {
+  global = e;
+  if (e.target.id == 'submit') {
     e.preventDefault();
 
     card.classList.add('sent');
