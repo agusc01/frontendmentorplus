@@ -37,8 +37,6 @@ form.addEventListener('click', (e) => {
     if (valueInput != -1) {
       card.classList.add('sent');
       feedBack.textContent = `You selected ${valueInput} out of ${radioInputs.length}`;
-    } else {
-      window.alert('Please take a rating to submit');
     }
   } else if (
     e.target.classList.contains('rated__input') ||
