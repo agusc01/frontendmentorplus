@@ -25,8 +25,116 @@
 
 @import 'variables';
 @import 'functions';
+@import 'mixins';
 
 * {
   font-size: concat($font-size, 'px');
   font-family: 'Overpass', sans-serif;
+}
+
+.main {
+  display: grid;
+  grid-template-areas: 'card' 'card' 'card' 'card' 'card' 'footer';
+  min-height: 100vh;
+  color: $color-white;
+  background-color: $color-very-dark-blue;
+}
+
+%circle {
+}
+
+.card {
+  grid-area: card;
+  place-self: center;
+  width: pxToRem(360);
+  height: pxToRem(390);
+  background-color: $color-card;
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  &__icon {
+    @include circle;
+  }
+  &__title {
+    font-size: 1.7rem;
+    &--anwser {
+      margin: pxToRem(30) 0 0;
+    }
+  }
+  &__text {
+    line-height: 1.5rem;
+    color: $color-light-grey;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    color: inherit;
+    background-color: $color-orange;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    &:hover {
+      color: $color-orange;
+      background-color: $color-white;
+    }
+  }
+
+  &__question {
+  }
+  &__answer {
+    display: none;
+    text-align: center;
+  }
+  &.sent {
+    .card__question {
+      display: none;
+    }
+    .card__answer {
+      display: block;
+    }
+  }
+
+  &__feedback {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: 400;
+    color: $color-orange;
+    background-color: $color-dark-blue;
+    opacity: 0.9;
+    margin: 1.25rem 0 0;
+  }
+}
+
+.rated {
+  display: flex;
+  padding: 1rem 0 2rem;
+  justify-content: space-between;
+  &__item {
+    @include circle(1rem, 1.2rem, true);
+    transition: color 0.5s, background-color 0.5s;
+    &:hover {
+      font-weight: 700;
+      color: $color-white;
+      background-color: $color-orange;
+    }
+  }
+  &__input {
+    display: none;
+    &:checked + .rated__item {
+      font-weight: 700;
+      color: $color-white;
+      background-color: $color-light-grey;
+    }
+  }
+}
+
+.attribution {
+  grid-area: footer;
+  margin: 0 auto;
 }

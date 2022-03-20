@@ -1,0 +1,18 @@
+@mixin circle(
+  $padding-b-t: 1rem,
+  $paddin-l-r: 1rem,
+  $flag-cursor: false
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  padding: $padding-b-t $paddin-l-r;
+  border-radius: 100%;
+  color: $color-light-grey;
+  background-color: $color-dark-blue;
+  @if $flag-cursor {
+    cursor: pointer;
+  }
+}
